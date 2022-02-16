@@ -1,5 +1,3 @@
-
-
 import express from 'express';
 import statusRoute from './routes/status.route';
 import usersRouter from './routes/users.route';
