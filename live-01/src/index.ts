@@ -1,14 +1,23 @@
 
 
-import express, {Request, Response, NextFunction} from 'express'
+import express from 'express';
+import statusRoute from './routes/status.route';
+import usersRouter from './routes/users.route';
+
 
 const app = express();
 
-app.get('/status', (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).send({foo: 'sucesso'})
-});
+//configuração da aplicação
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+// configuração de Rotas
+app.use(usersRouter);
+
+app.use(statusRoute)
+
+// Inicialização do servidor
 app.listen(3000, () => {
-    console.log(` (-̀ᴗ-́)و ̑̑ --> Aplicação Rodando -U+1F6AA- Porta 3000 <--`)
+    console.log(`--> Aplicação Rodando |-| Porta 3000 <--`)
 })
