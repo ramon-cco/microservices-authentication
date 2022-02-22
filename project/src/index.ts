@@ -44,4 +44,6 @@ app.listen(3000, () => {
     ${fast_forward}--${door} Na porta 3000 ${door}--${rewind}\n`;
 
     console.log(msg_aplicacao)
+    
+    
 })
